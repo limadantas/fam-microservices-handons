@@ -9,15 +9,15 @@ app = Flask(__name__)
 accouts_url = os.environ['ACCOUNTS']
 posts_url   = os.environ['POSTS']
 
-def autenticate (user):
+def authenticate (user):
     headers = {
         'Content-Type': 'application/json'
     }
     payload_user = json.dumps(user)
-    r            = requests.post(f"{accouts_url}/accounts/autenticate", headers=headers, data=payload_user)
-    autenticate  = r.json()
+    r            = requests.post(f"{accouts_url}/accounts/authenticate", headers=headers, data=payload_user)
+    authenticate  = r.json()
     
-    return autenticate['valid']
+    return authenticate['valid']
 
 def get_user_id_by_username (username):
     user = requests.get(f"{accouts_url}/accounts/users/name/{username}").json()
@@ -46,7 +46,7 @@ def create_post ():
         'Content-Type': 'application/json'
     }
 
-    if autenticate(user):
+    if authenticate(user):
         post['id_user'] = get_user_id_by_username (user['username'])
         payload_post    = json.dumps(post)
         posted          = requests.post(f"{posts_url}/posts", headers=headers, data=payload_post).json()
@@ -61,7 +61,7 @@ def delete_post (post_id):
         'username': request.headers.get("username"),
         'password': request.headers.get("password")
     }
-    if autenticate(user):
+    if authenticate(user):
         requests.delete(f"{posts_url}/posts/{post_id}")
         return jsonify({}), 204
     

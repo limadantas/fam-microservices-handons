@@ -1,0 +1,389 @@
+{
+	"info": {
+		"_postman_id": "898617fd-9531-451b-9a7c-da6c3ec2ccfb",
+		"name": "FAM Microsserviços HANDS ON",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "List posts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "douglas",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12345678",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gateway_host}}/posts",
+							"host": [
+								"{{gateway_host}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List posts by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "username",
+								"value": "douglas",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12345678",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gateway_host}}/posts/1",
+							"host": [
+								"{{gateway_host}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "username",
+								"value": "douglas",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12345678",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Hello world!\",\n\t\"body\": \"Lorem ipsum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{gateway_host}}/posts",
+							"host": [
+								"{{gateway_host}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete posts by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "username",
+								"value": "douglas",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "12345678",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{gateway_host}}/posts/1",
+							"host": [
+								"{{gateway_host}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "List posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{posts_host}}/posts",
+							"host": [
+								"{{posts_host}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get posts by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{posts_host}}/posts/1",
+							"host": [
+								"{{posts_host}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert new post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id_user\": 1,\n\t\"title\": \"Hello world!\",\n\t\"body\": \"Lorem ipsum\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{posts_host}}/posts",
+							"host": [
+								"{{posts_host}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{posts_host}}/posts/1",
+							"host": [
+								"{{posts_host}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "List accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{accounts_host}}/accounts",
+							"host": [
+								"{{accounts_host}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{accounts_host}}/accounts/users/1",
+							"host": [
+								"{{accounts_host}}"
+							],
+							"path": [
+								"accounts",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account by username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{accounts_host}}/accounts/users/name/douglas",
+							"host": [
+								"{{accounts_host}}"
+							],
+							"path": [
+								"accounts",
+								"users",
+								"name",
+								"douglas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert new account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"douglas2\",\n    \"password\": \"12345678\",\n    \"email\": \"ddouglas@douglas.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{accounts_host}}/accounts",
+							"host": [
+								"{{accounts_host}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"douglas\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{accounts_host}}/accounts/autenticate",
+							"host": [
+								"{{accounts_host}}"
+							],
+							"path": [
+								"accounts",
+								"autenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete account by username",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{accounts_host}}/accounts/users/name/douglas",
+							"host": [
+								"{{accounts_host}}"
+							],
+							"path": [
+								"accounts",
+								"users",
+								"name",
+								"douglas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "gateway_host",
+			"value": "http://127.0.0.1:5000"
+		},
+		{
+			"key": "posts_host",
+			"value": "http://127.0.0.1:5001"
+		},
+		{
+			"key": "accounts_host",
+			"value": "http://127.0.0.1:5002"
+		}
+	]
+}

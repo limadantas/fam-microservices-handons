@@ -55,8 +55,8 @@ def sing_up ():
     """), 201
     return jsonify(data)
 
-@app.route('/accounts/autenticate', methods=['POST'])
-def autenticate ():
+@app.route('/accounts/authenticate', methods=['POST'])
+def authenticate ():
     data             = request.get_json()
     username         = data["username"]
 
