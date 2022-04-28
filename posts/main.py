@@ -51,7 +51,8 @@ def create_post ():
 
 @app.route('/posts/<post_id>', methods=['DELETE'])
 def delete_post (post_id):
-    return jsonify(execute_query(f"DELETE FROM posts WHERE post_id={post_id}"))
+    execute_update(f"DELETE FROM posts WHERE post_id={post_id}")
+    return ('', 204)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
