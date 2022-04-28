@@ -74,7 +74,8 @@ def authenticate ():
 
 @app.route('/accounts/users/name/<username>', methods=['DELETE'])
 def delete_account (username):
-    return jsonify(execute_query(f"DELETE FROM accounts WHERE username='{username}'"))
+    execute_update(f"DELETE FROM accounts WHERE username='{username}'")
+    return ('', 204)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
