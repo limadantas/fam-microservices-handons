@@ -2,7 +2,9 @@ from hashlib import md5
 import os
 from sqlalchemy import create_engine
 from flask import Flask, jsonify, request
+from dotenv import load_dotenv
 
+load_dotenv()
 
 app = Flask(__name__)
 
